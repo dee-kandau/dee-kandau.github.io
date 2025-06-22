@@ -137,28 +137,85 @@
               <div class="swiper-pagination"></div>
             </div>
             <h3>Summary</h3>
-            This is an online sports betting and casino application. There are three different front ends consuming a
-            single RESTful API (Web app, Mobile app & USSD).
-            Web app is built on react Nextjs framework, using Redux for state management, Zod for data validation and
-            sanitization, Typescript.
-            <br> We are using jsonwebtoken to authenticate and authorize users.
-            Users can place their bets either on prematch or Live matches which are available, play crash games and play
-            casino games oline. Once you win your bet you get a notification via SMS
-            and your winnings transfered to your wallet.
-            <br> We support both instant deposits and withdrawals to your wallet to your favourite mobile money wallet.
+ <h4>Online Sports Betting and Casino Platform</h4>
+  <p>This is an online sports betting and casino platform with multiple frontends and a microservice-based backend architecture:</p>
 
-            Backed is built on Java (Springboot) as a microservice architecture. <br>We have five different services. To
-            secure them, only requests coming from APIGateway are allowed, with a specified token. Direct request to
-            each microservice is denied.
-            We are utilizing circuit breaker pattern for synchronous requests between microservices. 98% of service to
-            service communcation is asynchronous facilitated by Kafka. User authentication is handled on the APIgateway
-            instead of calling auth service everytime.
-            To discover services we used Eureka server. <br>Centrallized logging, distributed tracing and monitoring
-            stack is grafana,prometheus,Loki and Tempo.
-            <br> CI/CD is thruogh Jenkins using Dockerizing services and pushing them to docker hub. Due to lack of
-            resources we are using only a single EC2 instance to run all aplications using docker compose.
-            We have Master-Follower replication of a mysql database. The application is tested on minikube to support
-            k8.
+  <h5>🖥️ Frontend</h5>
+  <ul>
+    <li>Three interfaces consume a single RESTful API:
+      <ul>
+        <li><strong>Web App</strong> (built with React and Next.js)</li>
+        <li><strong>Mobile App</strong></li>
+        <li><strong>USSD</strong></li>
+      </ul>
+    </li>
+    <li>Key frontend technologies:
+      <ul>
+        <li><strong>Redux</strong> for state management</li>
+        <li><strong>Zod</strong> for data validation and sanitization</li>
+        <li><strong>TypeScript</strong> for static typing</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h5>🔐 Authentication & User Experience</h5>
+  <ul>
+    <li><strong>JWT (jsonwebtoken)</strong> is used for user authentication and authorization</li>
+    <li>Users can:
+      <ul>
+        <li>Bet on <strong>pre-match</strong> or <strong>live games</strong></li>
+        <li>Play <strong>crash games</strong> and <strong>online casino games</strong></li>
+      </ul>
+    </li>
+    <li><strong>SMS notifications</strong> are sent for bet winnings, which are credited to the user’s wallet</li>
+    <li>Supports <strong>instant deposits and withdrawals</strong> to/from mobile money wallets</li>
+  </ul>
+
+  <h5>⚙️ Backend Architecture</h5>
+  <ul>
+    <li>Built in <strong>Java (Spring Boot)</strong> using a <strong>microservice architecture</strong></li>
+    <li>Composed of <strong>five distinct microservices</strong></li>
+    <li>Security and communication:
+      <ul>
+        <li>Only requests from the <strong>API Gateway</strong> with a specific token are allowed</li>
+        <li><strong>Direct access</strong> to microservices is denied</li>
+        <li><strong>Circuit Breaker pattern</strong> used for synchronous communication</li>
+        <li><strong>Kafka</strong> handles 98% of asynchronous inter-service communication</li>
+        <li><strong>Authentication centralized at the API Gateway</strong></li>
+        <li><strong>Eureka Server</strong> used for service discovery</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h5>📊 Observability Stack</h5>
+  <ul>
+    <li><strong>Centralized logging, tracing, and monitoring</strong> using:
+      <ul>
+        <li><strong>Grafana</strong> (dashboarding)</li>
+        <li><strong>Prometheus</strong> (metrics)</li>
+        <li><strong>Loki</strong> (logs)</li>
+        <li><strong>Tempo</strong> (distributed tracing)</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h5>🚀 DevOps & Deployment</h5>
+  <ul>
+    <li><strong>CI/CD</strong> via <strong>Jenkins</strong></li>
+    <li>Services are:
+      <ul>
+        <li><strong>Dockerized</strong></li>
+        <li>Pushed to <strong>Docker Hub</strong></li>
+      </ul>
+    </li>
+    <li>Deployment:
+      <ul>
+        <li>All services run on a <strong>single EC2 instance</strong> using <strong>Docker Compose</strong> due to resource constraints</li>
+      </ul>
+    </li>
+    <li><strong>MySQL</strong> with <strong>master-follower replication</strong></li>
+    <li><strong>Kubernetes support</strong> tested locally using <strong>Minikube</strong></li>
+  </ul>
 
           </div>
 
